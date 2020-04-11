@@ -1,1 +1,1 @@
-# password-generator
+In this homework assignment, I was tasked with creating a random password generator. The user is prompted to enter a password length of his or her choosing. They are then given the option of creating a password which consists of special characters, numbers, or letters (upper or lowercase). They are free to use as many of these options as they would like. After deciding which parameters they would like to use, a randomly generated password is created and shown to the user on the screen.  
