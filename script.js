@@ -1,10 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var numberBank = [0,1,2,3,4,5,6,7,8,9];
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
- // upperCase
-// var uperCase = [];
-var characterBank = ["!","#","$","%","&","'","(",")","*","+",","-","]; //"./:;<=>?@[\]^_`{|}~]
+var lowerCaseBank = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var upperCaseBank = ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; 
+var characterBank = ["!",'"',"#","$","%","&","'","(",",",")","*","+","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~","U+005C"];
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -28,25 +29,53 @@ function generatePassword() {
   var upperCase = confirm("Click to confirm the use of uppercase letters.");
   var useNumbers = confirm("Click to confirm the use of numbers.");
 
-  if (specialCharacters|| lowerCase || upperCase || useNumbers ) {
+  if (specialCharacters || lowerCase || upperCase || useNumbers ) {
   while (generatedPassword.length < characterLength) { 
-var category = 0; 
-if (category == 0 ){
+    
   
+   
+   var characterType = ["specialCharacters", "lowerCase", "upperCase", "useNumbers"];
+   
 
-}
-
+    if (useNumbers) {
+      generatedPassword += numberBank[Math.floor(Math.random() * 10)];
+      
+    
+    }if (lowerCase) {
+        generatedPassword += lowerCaseBank[Math.floor(Math.random()* 26)];
+      
+    
+    }if
+      (upperCase) {
+        generatedPassword += upperCaseBank[Math.floor(Math.random() * 26)];
+      
+        
+    
+    }if (specialCharacters) {
+        generatedPassword += characterBank[Math.floor(Math.random() *32)];
+        
+      }
+    }
   }
+
+
+   return generatedPassword;
+}
+        
+  
     
 
-  }
-
-  return generatedPassword
+    
 
 
+ 
 
 
-}
+
+
+
+
+
 
 
 // Add event listener to generate button
