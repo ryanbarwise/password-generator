@@ -34,25 +34,24 @@ function generatePassword() {
     
   
    
-   var characterType = ["specialCharacters", "lowerCase", "upperCase", "useNumbers"];
-   
+    var characterType = ["specialCharacters", "lowerCase", "upperCase", "numbers"];
+    var category = characterType[Math.floor(Math.random() * 4)];
 
-    if (useNumbers) {
-      generatedPassword += numberBank[Math.floor(Math.random() * 10)];
+    if (category === "numbers" && useNumbers) {
+      generatedPassword += numberBank[Math.floor(Math.random() * numberBank.length)];
+
+
+    } else if (category === 'lowerCase' && lowerCase) {
+        generatedPassword += lowerCaseBank[Math.floor(Math.random()* lowerCaseBank.length)];
       
     
-    }if (lowerCase) {
-        generatedPassword += lowerCaseBank[Math.floor(Math.random()* 26)];
-      
-    
-    }if
-      (upperCase) {
-        generatedPassword += upperCaseBank[Math.floor(Math.random() * 26)];
+    } else if (category === 'upperCase' && upperCase) {
+        generatedPassword += upperCaseBank[Math.floor(Math.random() * upperCaseBank.length)];
       
         
     
-    }if (specialCharacters) {
-        generatedPassword += characterBank[Math.floor(Math.random() *32)];
+    } else if (category === 'specialCharacters' && specialCharacters) {
+        generatedPassword += characterBank[Math.floor(Math.random() * characterBank.length)];
         
       }
     }
